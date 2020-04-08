@@ -1,5 +1,7 @@
 package com.aaron.design.proxy.dynamicproxy.cglib;
 
+import java.io.IOException;
+
 /**
  * cglib代理测试类
  * CGLIB原理：动态生成一个要代理类的子类，子类重写要代理的类的所有不是final的方法。
@@ -14,7 +16,7 @@ package com.aaron.design.proxy.dynamicproxy.cglib;
  */
 public class CgLibProxyTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Subject cgLibProxy = (Subject)ProxyFactory.getCgLibProxy(new Subject());
         cgLibProxy.action();
     }
